@@ -1,19 +1,8 @@
-name: Build APK
-
-on:
-  push:
-    branches: [ "main" ]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-      # Mise à jour en v4
+steps:
       - uses: actions/checkout@v4
 
-      # Mise à jour en v4 + Ajout du cache pour accélérer
-      - uses: actions/setup-java@v4
+      - name: set up JDK 17
+        uses: actions/setup-java@v4
         with:
           java-version: '17'
           distribution: 'temurin'
@@ -21,12 +10,8 @@ jobs:
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
+        working-directory: NOM_DE_TON_DOSSIER # Remplace par le nom du dossier
 
       - name: Build with Gradle
         run: ./gradlew assembleDebug
-
-      # Mise à jour en v4 (Indispensable pour corriger ton erreur)
-      - uses: actions/upload-artifact@v4
-        with:
-          name: auto-update-apk
-          path: app/build/outputs/apk/debug/app-debug.apk
+        working-directory: NOM_DE_TON_DOSSIER # Remplace ici aussi
