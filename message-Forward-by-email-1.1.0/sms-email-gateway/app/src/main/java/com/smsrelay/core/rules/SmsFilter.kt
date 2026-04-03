@@ -8,19 +8,9 @@ import com.smsrelay.core.model.SmsEvent
  */
 object SmsFilter {
 
-    // Default whitelist: banks, carriers, common service short codes
-    private val defaultWhitelist = setOf(
-        // Banks
-        "95588", "95533", "95555", "95599", "95595", "95568", "95566", "95580",
-        "95558", "95577", "95559", "95561", "95562", "95563", "95564", "95565",
+    // No default whitelist: forward all messages by default
+    private val defaultWhitelist = emptySet<String>()
 
-        // Carriers
-        "10086", "10010", "10000", "10001",
-
-        // Common service prefixes
-        "106", "95", "10690", "10691", "10692", "10693", "10694", "10695",
-        "10696", "10697", "10698", "10699"
-    )
 
     // Default blacklist: common spam keywords
     private val defaultBlacklist = setOf(

