@@ -1,7 +1,19 @@
-steps:
+name: Android CI
+
+on:
+  push:
+    branches: [ "main", "master" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
       - uses: actions/checkout@v4
 
-      - name: set up JDK 17
+      - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
           java-version: '17'
@@ -10,8 +22,14 @@ steps:
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
-        working-directory: NOM_DE_TON_DOSSIER # Remplace par le nom du dossier
+        working-directory: message-Forward-by-email-1.1.0/sms-email-gateway
 
       - name: Build with Gradle
         run: ./gradlew assembleDebug
-        working-directory: NOM_DE_TON_DOSSIER # Remplace ici aussi
+        working-directory: message-Forward-by-email-1.1.0/sms-email-gateway
+
+      - name: Upload APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-debug
+          path: message-Forward-by-email-1.1.0/sms-email-gateway/app/build/outputs/apk/debug/app-debug.apk
