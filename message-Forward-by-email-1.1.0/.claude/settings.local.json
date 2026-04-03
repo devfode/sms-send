@@ -1,0 +1,35 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(chmod:*)",
+      "Bash(python3:*)",
+      "Bash(./build_and_test.sh)",
+      "Bash(cat:*)",
+      "Bash(gradle:*)",
+      "Bash(curl:*)",
+      "Bash(./gradlew:*)",
+      "Bash(timeout:*)",
+      "Bash(gtimeout:*)",
+      "Bash(./test_build.sh)",
+      "Read(/Users/a1-6/.gradle/wrapper/dists/**)",
+      "Bash(./install_android_sdk.sh:*)",
+      "Bash(export ANDROID_HOME=/Users/a1-6/Library/Android/sdk)",
+      "Bash($ANDROID_HOME/cmdline-tools/latest/bin/sdkmanager:*)",
+      "Bash(docker run:*)",
+      "Bash(docker ps:*)",
+      "Bash(lsof:*)",
+      "Bash($ANDROID_HOME/emulator/emulator:*)",
+      "Read(/Applications/**)",
+      "Bash(kotlin test:*)",
+      "Bash(javac:*)",
+      "Bash(tree:*)",
+      "Bash(echo \"   git commit -m \"\"Initial commit: SMS Email Gateway v1.0.0\"\"\")",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

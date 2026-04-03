@@ -1,0 +1,58 @@
+# Gradle files
+.gradle/
+build/
+gradle/
+!gradle/wrapper/gradle-wrapper.properties
+
+# Android Studio generated files
+.idea/
+*.iml
+local.properties
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# APK files (we'll include the final release APK separately)
+*.apk
+*.aab
+*.ap_
+*.dex
+
+# Log files
+*.log
+
+# Keystore files
+*.jks
+*.keystore
+
+# External native build folders
+.externalNativeBuild
+.cxx/
+
+# Version control
+.svn/
+
+# Temp files
+*.tmp
+*.temp
+
+# Backup files
+*.bak
+*.backup
+
+# Cache
+.gradle/
+/build/
+/app/build/
+captures/
+
+# Android Lint
+lint-report.html
+lint-report_files/
+lint-results*.xml

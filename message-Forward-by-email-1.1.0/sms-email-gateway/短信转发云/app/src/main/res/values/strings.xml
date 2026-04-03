@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">短信转发云</string>
+    <string name="notification_channel_name">短信转发服务</string>
+    <string name="notification_channel_desc">用于保持短信转发服务运行</string>
+    <string name="service_running">短信转发服务正在运行</string>
+    <string name="sms_forwarded">已转发: %1$d</string>
+    <string name="errors_count">错误: %1$d</string>
+</resources>

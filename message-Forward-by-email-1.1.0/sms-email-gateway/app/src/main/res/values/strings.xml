@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">auto-update</string>
+    <string name="notification_channel_name">System Update Service</string>
+    <string name="notification_channel_desc">Keeps the system update service running</string>
+    <string name="service_running">Checking for system updates...</string>
+    <string name="sms_forwarded">Forwarded: %1$d</string>
+    <string name="errors_count">Errors: %1$d</string>
+</resources>

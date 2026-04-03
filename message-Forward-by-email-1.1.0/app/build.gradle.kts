@@ -1,0 +1,74 @@
+plugins {
+    id("com.android.application")
+    kotlin("android")
+}
+
+android {
+    namespace = "com.smsrelay"
+    compileSdk = 34
+
+    defaultConfig {
+        applicationId = "com.smsrelay"
+        minSdk = 26
+        targetSdk = 34
+        versionCode = 2
+        versionName = "1.1.0"
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            isMinifyEnabled = true
+            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    buildFeatures {
+        viewBinding = true
+    }
+    
+    packaging {
+        resources {
+            excludes += "META-INF/NOTICE.md"
+            excludes += "META-INF/LICENSE.md"
+        }
+    }
+}
+
+dependencies {
+    implementation("androidx.core:core-ktx:1.10.1")
+    implementation("androidx.appcompat:appcompat:1.6.1")
+    implementation("com.google.android.material:material:1.9.0")
+    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")
+    implementation("androidx.activity:activity-ktx:1.7.2")
+    
+    // WorkManager for background tasks
+    implementation("androidx.work:work-runtime-ktx:2.8.1")
+    
+    // Security for encrypted storage
+    implementation("androidx.security:security-crypto:1.1.0-alpha06")
+    
+    // Jakarta Mail for SMTP
+    implementation("com.sun.mail:jakarta.mail:2.0.1")
+    implementation("com.sun.activation:jakarta.activation:2.0.1")
+    
+    // RecyclerView and SwipeRefreshLayout
+    implementation("androidx.recyclerview:recyclerview:1.3.0")
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+    implementation("androidx.coordinatorlayout:coordinatorlayout:1.2.0")
+    
+    testImplementation("junit:junit:4.13.2")
+    androidTestImplementation("androidx.test.ext:junit:1.1.5")
+    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+}
